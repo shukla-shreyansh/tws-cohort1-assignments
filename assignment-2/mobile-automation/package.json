@@ -1,0 +1,17 @@
+{
+  "name": "mobile-automation",
+  "version": "1.0.0",
+  "description": "Mobile automation tests for assignment 2",
+  "main": "index.js",
+  "scripts": {
+    "test:android": "jest android.spec.js",
+    "test:ios": "jest ios.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "wd": "^1.14.0"
+  }
+}

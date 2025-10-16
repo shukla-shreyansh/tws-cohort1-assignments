@@ -1,0 +1,12 @@
+[
+  {
+    "username": "shreyansh",
+    "password": "testwithshreyansh!",
+    "isValid": true
+  },
+  {
+    "username": "invaliduser",
+    "password": "invalidpassword",
+    "isValid": false
+  }
+]
