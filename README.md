@@ -19,12 +19,9 @@ The project is organized into different assignments. Below is a summary of the a
 |                  | [`SecurePage.js`](./assignment-2/SecurePage.js)                      | Page Object Model for the secure page after login.                          |
 |                  | [`data/users.json`](./assignment-2/data/users.json)                  | Test data with user credentials.                                            |
 |                  | [`mobile-automation/`](./assignment-2/mobile-automation/)            | Sub-project for mobile automation tests (Android & iOS).                    |
-| **Assignment 3** | [`ApiClient.js`](./assignment-3/ApiClient.js)                        | A generic API client for making HTTP requests.                              |
-|                  | [`UsersApi.js`](./assignment-3/UsersApi.js)                          | API wrapper for user-related endpoints.                                     |
-|                  | [`CoursesApi.js`](./assignment-3/CoursesApi.js)                      | API wrapper for course-related endpoints.                                   |
-|                  | `*.test.js`                                                          | A suite of API tests including integration, contract, schema validation, etc. |
-| **Assignment 3 Solution** | [`assignments/assignment-3/solution/python`](./assignments/assignment-3/solution/python) | A complete Python solution for Assignment 3. |
-|                  | [`assignments/assignment-3/solution/java`](./assignments/assignment-3/solution/java) | A complete Java solution for Assignment 3. |
+| **Assignment 3** | [`javascript/`](./assignment-3/javascript/)                          | A suite of API tests using Javascript.                                      |
+|                  | [`python/`](./assignment-3/python/)                                  | A complete Python solution for Assignment 3.                                |
+|                  | [`java/`](./assignment-3/java/)                                      | A complete Java solution for Assignment 3.                                  |
 
 ## Getting Started
 
@@ -39,8 +36,8 @@ The project is organized into different assignments. Below is a summary of the a
 3. Install the dependencies for all assignments:
    ```bash
    npm install
-   # Navigate to assignment-3 and install its dependencies
-   cd assignment-3 && npm install && cd ..
+   # Navigate to assignment-3/javascript and install its dependencies
+   cd assignment-3/javascript && npm install && cd ../..
    ```
 
 ## Running the Solutions
@@ -72,7 +69,7 @@ npx playwright test
 To run the API tests, navigate to the assignment directory and run the test command:
 
 ```bash
-cd assignment-3
+cd assignment-3/javascript
 npm test
 ```
 
@@ -81,7 +78,7 @@ npm test
 To run the Python solution, navigate to the Python solution directory, install the dependencies, and run pytest:
 
 ```bash
-cd assignments/assignment-3/solution/python
+cd assignment-3/python
 pip install -r requirements.txt
 pytest
 ```
@@ -91,5 +88,5 @@ pytest
 To run the Java solution, navigate to the Java solution directory and run the Maven tests:
 
 ```bash
-cd assignments/assignment-3/solution/java
+cd assignment-3/java
 mvn test

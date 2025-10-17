@@ -24,6 +24,18 @@ test.describe('Login Flow', () => {
 
     await expect(loginPage.flashMessage).toContainText('Your username is invalid!');
   });
+
+  test('should allow a user to log out', async ({ page }) => {
+    await loginPage.login('shreyansh', 'testwithshreyansh!');
+
+    const securePage = new SecurePage(page);
+    await expect(page).toHaveURL(/.*secure/);
+
+    await securePage.logout();
+
+    await expect(page).toHaveURL(/.*login/);
+    await expect(loginPage.flashMessage).toContainText('You logged out of the secure area!');
+  });
 });
 
 test.describe('Data-driven Login Test', () => {
