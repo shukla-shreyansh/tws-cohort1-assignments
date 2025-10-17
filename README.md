@@ -23,6 +23,8 @@ The project is organized into different assignments. Below is a summary of the a
 |                  | [`UsersApi.js`](./assignment-3/UsersApi.js)                          | API wrapper for user-related endpoints.                                     |
 |                  | [`CoursesApi.js`](./assignment-3/CoursesApi.js)                      | API wrapper for course-related endpoints.                                   |
 |                  | `*.test.js`                                                          | A suite of API tests including integration, contract, schema validation, etc. |
+| **Assignment 3 Solution** | [`assignments/assignment-3/solution/python`](./assignments/assignment-3/solution/python) | A complete Python solution for Assignment 3. |
+|                  | [`assignments/assignment-3/solution/java`](./assignments/assignment-3/solution/java) | A complete Java solution for Assignment 3. |
 
 ## Getting Started
 
@@ -72,3 +74,22 @@ To run the API tests, navigate to the assignment directory and run the test comm
 ```bash
 cd assignment-3
 npm test
+```
+
+#### Python Solution
+
+To run the Python solution, navigate to the Python solution directory, install the dependencies, and run pytest:
+
+```bash
+cd assignments/assignment-3/solution/python
+pip install -r requirements.txt
+pytest
+```
+
+#### Java Solution
+
+To run the Java solution, navigate to the Java solution directory and run the Maven tests:
+
+```bash
+cd assignments/assignment-3/solution/java
+mvn test
