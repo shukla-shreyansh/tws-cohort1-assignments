@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+echo Your Local Branch Name: $local_branch_name
+
+valid_branch_regex="^[[:alnum:]_\\-\\/]+/(feature|bugfix|hotfix)/[A-Za-z]+-[0-9]+/.*$"
+
+if [[ ! $local_branch_name =~ $valid_branch_regex ]]
+
+then
+
+echo "Error: Branch name does not follow the correct convention."
+
+echo "Branch name should be in the format: username/branchtype/jiraid/anyspecificflow"
+
+echo "Branch Example: github-username/feature/QUAL-123/newfeature"
+
+exit 1
+
+fi
+
+exit 0

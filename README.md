@@ -23,6 +23,19 @@ The project is organized into different assignments. Below is a summary of the a
 |                  | [`python/`](./assignment-3/python/)                                  | A complete Python solution for Assignment 3.                                |
 |                  | [`java/`](./assignment-3/java/)                                      | A complete Java solution for Assignment 3.                                  |
 | **Assignment 4** | [`assignment-4/`](./assignment-4/)                                   | Solutions for performance, security, and usability testing.                 |
+| **Assignment 5** | [`assignment-5/`](./assignment-5/)                                   | Solutions for CI/CD, Docker, and Observability.                             |
+
+## CI/CD
+
+This repository is equipped with a CI/CD pipeline to automate testing.
+
+### GitHub Actions
+
+A GitHub Actions workflow is configured in `.github/workflows/ci.yml`. It automatically runs the Playwright test suite on every push and pull request to the `main` branch, generates an Allure report, and uploads it as a build artifact.
+
+### Jenkins
+
+A `Jenkinsfile` is also available in `assignment-5/` for running the same CI pipeline on a Jenkins server.
 
 ## Getting Started
 
@@ -93,11 +106,31 @@ cd assignment-3/java
 mvn test
 ```
 
-### Assignment 4: Performance, Security & Usability Testing
+### Assignment 4 & 5: Performance, Security, Usability & Observability
 
-#### Performance Testing
+#### Performance Testing with Grafana Integration
 
-To run the performance tests, you will need to have k6 and Locust installed.
+This project includes a complete setup for running k6 performance tests and visualizing the results in Grafana using Docker.
+
+1.  **Navigate to the assignment directory:**
+    ```bash
+    cd assignment-5
+    ```
+2.  **Start the monitoring stack:**
+    ```bash
+    docker-compose up -d
+    ```
+    This command will start k6, InfluxDB, and Grafana. The k6 container will execute the test script from `assignment-4/performance/k6-test.js`.
+
+3.  **View the dashboard:**
+    Open your browser and go to `http://localhost:3000` to see the live performance metrics on the pre-configured "k6 Load Test" dashboard.
+
+4.  **Stop the services:**
+    ```bash
+    docker-compose down
+    ```
+
+To run the performance tests standalone, you will need to have k6 and Locust installed.
 
 **k6 Test**
 
@@ -125,3 +158,17 @@ For more details, see the `assignment-4/security/` directory.
 A heuristic review was conducted on the Spotify Web application. The review is based on Nielsen's 10 Usability Heuristics and includes observations and suggestions for improvement.
 
 For a detailed breakdown of the review, see the `assignment-4/usability/` directory.
+
+## Git Hooks
+
+This project includes Git hooks to enforce branch naming conventions and commit message standards.
+
+### Setup
+
+To enable the Git hooks, run the following script from the root of the project:
+
+```bash
+./setup-githooks.sh
+```
+
+This will configure Git to use the hooks located in the `.git-hooks` directory.

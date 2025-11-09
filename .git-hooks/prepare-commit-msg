@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+valid_commit_msg_regex="^[A-Za-z0-9 -./''+]{9,100}$"
+
+message="This commit violates the commit message rules. Commit should avoid generic text and should be in the range of 10-100 characters."
+
+if [[ -z "$GIT_SEQUENCE_EDITOR" ]]; then
+
+if [[ ! $(cat "$1") =~ $valid_commit_msg_regex ]]; then
+
+echo "Your commit message: $(cat "$1")"
+
+echo "$message"
+
+echo "Commit Example: QUAL-112 GitHooks updated"
+
+exit 1
+
+fi
+
+fi
+
+exit 0

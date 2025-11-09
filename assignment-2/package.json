@@ -4,7 +4,7 @@
   "description": "Solutions for the cohort assignments.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "playwright test"
   },
   "keywords": [],
   "author": "Shreyansh Shukla",
@@ -12,6 +12,7 @@
   "devDependencies": {
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.8.0",
+    "allure-playwright": "^2.15.1",
     "jest": "^29.7.0",
     "node-fetch": "^2.7.0"
   }
