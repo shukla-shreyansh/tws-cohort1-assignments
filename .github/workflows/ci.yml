@@ -21,7 +21,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx --prefix assignment-2 playwright install --with-deps
     - name: Run Playwright tests
-      run: npx --prefix assignment-2 playwright test
+      run: npx --prefix assignment-2 playwright test -c ./playwright.config.js
     - name: Generate Allure report
       run: npx --prefix assignment-2 allure generate allure-results --clean -o allure-report
     - name: Upload Allure report
